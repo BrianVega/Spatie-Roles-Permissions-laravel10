@@ -10,8 +10,8 @@
 
             <div class="card mt-3">
                 <div class="card-header">
-                    <h4>Permisos
-                    <a href="{{ url('permissions/create') }}" class="btn btn-primary float-end">Añadir permiso</a>
+                    <h4>Roles
+                    <a href="{{ url('roles/create') }}" class="btn btn-primary float-end">Añadir Rol</a>
                     </h4>
                 </div>
                 <div class="card-body">
@@ -24,14 +24,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($permissions as $permission)
+                                @foreach ($roles as $role)
                                 <tr>
-                                    <td>{{ $permission->id }}</td>
-                                    <td>{{ $permission->name }}</td>
+                                    <td>{{ $role->id }}</td>
+                                    <td>{{ $role->name }}</td>
                                     <td>
-                                        <a href="{{ url('permissions/'.$permission->id.'/edit') }}" class="btn btn-success">Editar</a>
-
-                                        <a href="{{ url('permissions/'.$permission->id.'/delete') }}" class="btn btn-danger mx-2">Eliminar</a>
+                                        <a href="{{ url('roles/'.$role->id.'/give-permissions') }}" class="btn btn-warning">Añadir / Editar permisos de rol</a>
+                                        <a href="{{ url('roles/'.$role->id.'/edit') }}" class="btn btn-success">Editar</a>
+                                        <a href="{{ url('roles/'.$role->id.'/delete') }}" class="btn btn-danger mx-2">Eliminar</a>
                                     </td>
                                 </tr>
                                 @endforeach
